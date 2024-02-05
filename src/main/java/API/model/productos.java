@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 public class productos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idproducto")
-    private Integer idproducto;
+    @Column(name="idproductos")
+    private Integer idproductos;
 
     @Column(name="nombre")
     private String nombre;
@@ -23,16 +23,16 @@ public class productos {
     @Column(name="stock")
     private Long stock;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name= "idproveedor")
-    private Integer idproveedor;
+    private proveedor idproveedor;
 
-    public productos(int idproducto,String nombre, double importe, long stock, int idproveedor ){
-        this.idproducto= idproducto;
+    public productos(int idproductos,String nombre, double importe, long stock, int idproveedor ){
+        this.idproductos= idproductos;
         this.nombre= nombre;
         this.importe= importe;
         this.stock=stock;
-        this.idproveedor=idproveedor;
+        this.idproveedor=getIdproveedor();
     }
 
 

@@ -1,6 +1,7 @@
 package API.model;
 
 import jakarta.persistence.*;
+import API.dto.proveedorDTO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
@@ -41,6 +42,13 @@ public class proveedor {
         this.correo=correo;
     }
 
-
+    public proveedor( proveedorDTO proveedorDTO){
+            this.idproveedor= proveedorDTO.getIdproveedor();
+            this.nombreproveedor=proveedorDTO.getNombreproveedor();
+            this.provincia= proveedorDTO.getProvincia();
+            this.telefono= proveedorDTO.getTelefono();
+            this.correo=proveedorDTO.getCorreo();
+            this.personacontacto=getPersonacontacto();
+    }
 
 }
