@@ -1,6 +1,8 @@
 package API.model;
 
+import API.dto.productosDTO;
 import jakarta.persistence.*;
+import API.model.productos;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -36,7 +38,13 @@ public class productos {
     }
 
 
-
-
+    public productos(productosDTO productosDTO) {
+        this.idproductos = productosDTO.getIdproductos();
+        this.nombre = productosDTO.getNombre();
+        this.importe = productosDTO.getImporte();
+        this.stock = productosDTO.getStock();
+        // Aquí puedes manejar la conversión del proveedorDTO a proveedor si es necesario
+        this.idproveedor = new proveedor(productosDTO.getProveedor());
+    }
 
 }

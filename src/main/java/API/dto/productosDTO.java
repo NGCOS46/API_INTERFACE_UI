@@ -1,6 +1,10 @@
 package API.dto;
 import API.model.productos;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 public class productosDTO {
     private int idproductos;
     private String nombre;
