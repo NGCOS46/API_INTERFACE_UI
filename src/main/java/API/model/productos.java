@@ -26,15 +26,14 @@ public class productos {
     private Long stock;
 
     @ManyToOne
-    @JoinColumn(name= "idproveedor")
-    private proveedor idproveedor;
+    private proveedor proveedor;
 
     public productos(int idproductos,String nombre, double importe, long stock, int idproveedor ){
         this.idproductos= idproductos;
         this.nombre= nombre;
         this.importe= importe;
         this.stock=stock;
-        this.idproveedor=getIdproveedor();
+        this.proveedor=getProveedor();
     }
 
 
@@ -44,7 +43,7 @@ public class productos {
         this.importe = productosDTO.getImporte();
         this.stock = productosDTO.getStock();
         // Aquí puedes manejar la conversión del proveedorDTO a proveedor si es necesario
-        this.idproveedor = new proveedor(productosDTO.getProveedor());
+        this.proveedor = new proveedor(productosDTO.getProveedor());
     }
 
 }

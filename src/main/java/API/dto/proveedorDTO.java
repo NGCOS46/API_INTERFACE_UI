@@ -1,4 +1,5 @@
 package API.dto;
+
 import API.model.proveedor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

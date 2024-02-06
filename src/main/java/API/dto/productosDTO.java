@@ -19,6 +19,6 @@ public class productosDTO {
         this.nombre =productos.getNombre();
         this.importe= productos.getImporte();
         this.stock= productos.getStock();;
-        this.proveedor= new proveedorDTO(productos.getIdproveedor());
+        this.proveedor= new proveedorDTO(productos.getProveedor());
     }
 }
